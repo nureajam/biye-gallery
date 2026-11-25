@@ -1,0 +1,31 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "biye-gallery",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-11-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*", "/m/*"]
+  },
+  "d1_databases": [
+    { "binding": "DB", "database_name": "biye-gallery", "database_id": "02c53e29-e6fc-4780-9777-dbc94c341ca8" },
+    { "binding": "SHARD1", "database_name": "biye-media-1", "database_id": "76c34b47-a858-4ec5-8996-4417de21f29d" },
+    { "binding": "SHARD2", "database_name": "biye-media-2", "database_id": "31260cfe-112e-42ed-9aab-cce698490237" },
+    { "binding": "SHARD3", "database_name": "biye-media-3", "database_id": "52bc46aa-bfa2-4b56-90c5-70c4d54743f8" },
+    { "binding": "SHARD4", "database_name": "biye-media-4", "database_id": "2cef69a9-a893-4852-ad66-111f582c84fa" },
+    { "binding": "SHARD5", "database_name": "biye-media-5", "database_id": "3b20f87b-808b-41a5-b9f3-e99be56b4963" },
+    { "binding": "SHARD6", "database_name": "biye-media-6", "database_id": "83bd8ca1-0db0-451e-b510-1e49920ef6dd" },
+    { "binding": "SHARD7", "database_name": "biye-media-7", "database_id": "559e17cd-cae1-439c-886a-379ca9549bcf" },
+    { "binding": "SHARD8", "database_name": "biye-media-8", "database_id": "a56aa680-cff5-49db-ac0b-a312a5bf7e34" }
+  ],
+  "vars": {
+    "SITE_TITLE": "ডেইজি নার্গিস ও মোঃ গোলাম হাবিব",
+    "SHARD_COUNT": "8",
+    "REQUIRE_APP": "1",
+    "APP_KEY": "4113347800fa2a5f",
+    "APP_DOWNLOAD_URL": ""
+  },
+  "observability": { "enabled": true }
+}
